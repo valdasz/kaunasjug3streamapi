@@ -2,6 +2,7 @@ package lt.kaunas.jug.stream.$2.creation;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -17,16 +18,16 @@ import java.util.stream.Stream;
 public class StreamFromBufferedReader {
 
 	public static void main(String... args) {
-		try (BufferedReader reader = Files.newBufferedReader(
-				Paths.get("File.txt"), StandardCharsets.UTF_8);
+
+		try (BufferedReader reader = Files.newBufferedReader(Paths
+				.get(StreamFromBufferedReader.class.getResource("File.txt")
+						.toURI()), StandardCharsets.UTF_8);
 				Stream<String> linesStream = reader.lines();) {
 
 			linesStream.forEach(System.out::println);
 
-		} catch (IOException e) {
+		} catch (IOException | URISyntaxException e) {
 			e.printStackTrace();
 		}
-
 	}
-
 }
