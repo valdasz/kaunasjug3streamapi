@@ -30,7 +30,8 @@ public class EmployeeStreamMain {
 
 		System.out.println("result=" + result);
 
-		// list after processing
+		// list after processing (not changed - operations on stream do not
+		// change source)
 		System.out.println("ids=" + idList);
 	}
 
