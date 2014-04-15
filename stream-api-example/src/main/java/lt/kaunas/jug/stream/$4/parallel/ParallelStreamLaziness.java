@@ -17,7 +17,7 @@ public class ParallelStreamLaziness {
 		intStream = intStream.parallel();
 
 		// causes unordered processing
-		intStream = intStream.unordered();
+		// intStream = intStream.unordered();
 
 		Stream<String> stream = intStream.mapToObj(p -> {
 			println("mapToObj: " + p);
