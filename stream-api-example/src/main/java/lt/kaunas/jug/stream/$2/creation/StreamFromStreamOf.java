@@ -19,5 +19,9 @@ public class StreamFromStreamOf {
 		// Stream.of(new int[] { 1, 2, 3 }, new int[] { 4, 5, 6 }).forEach(
 		// p -> Arrays.stream(p).forEach(System.out::println));
 
+		// Stream.of(new int[] { 1, 2, 3 }, new int[] { 4, 5, 6 })
+		// .flatMapToInt((p) -> Arrays.stream(p))
+		// .forEach(System.out::println);
+
 	}
 }
